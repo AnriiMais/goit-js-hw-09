@@ -65,6 +65,7 @@ function onCountdownStart(e) {
 
 function onBtnStop(e) {
   clearInterval(intervalId);
+  isRunInterval = false;
 }
 function convertMs(ms) {
   // Number of milliseconds per unit of time
