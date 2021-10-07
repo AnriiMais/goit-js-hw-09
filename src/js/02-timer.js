@@ -42,7 +42,6 @@ BtnStartCountdown.addEventListener('click', onCountdownStart);
 BtnStopCountdown.addEventListener('click', onBtnStop);
 
 function onCountdownStart(e) {
-  console.log('isRunInterval', isRunInterval);
   if (!isRunInterval) {
     isRunInterval = true;
     intervalId = setInterval(() => {
