@@ -1,6 +1,8 @@
 import flatpickr from 'flatpickr';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 // Дополнительный импорт стилей
 import 'flatpickr/dist/flatpickr.min.css';
+// import { render } from 'sass';
 
 const timerDays = document.querySelector('span[data-days]');
 const timerHours = document.querySelector('span[data-hours]');
@@ -31,7 +33,10 @@ const options = {
   onClose(selectedDates) {
     saveDate = selectedDates[0];
     if (Date.now() > selectedDates[0].valueOf()) {
-      alert('Please choose a date in the future');
+      // alert('Please choose a date in the future');
+      // Notify.warning('Memento te hominem esse');
+      Notify.init({ info: { background: 'red' } });
+      Notify.info('Please choose a date in the future');
     } else {
       BtnStartCountdown.disabled = false;
     }
